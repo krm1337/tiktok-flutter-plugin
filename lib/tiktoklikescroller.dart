@@ -20,7 +20,9 @@ class TikTokStyleFullPageScroller extends StatefulWidget {
     this.animationDuration = const Duration(milliseconds: 300),
     this.controller,
     this.onRefresh,
-  }) : onRefresh = onRefresh ?? (() async {}) {};
+}) : onRefresh = onRefresh ?? (() async {}) {
+    // Additional constructor logic if needed
+  }
 
   /// Callback to trigger the refreshIndicator.
   final Future<void> Function()? onRefresh;
