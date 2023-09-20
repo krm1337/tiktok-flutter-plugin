@@ -156,7 +156,7 @@ class _TikTokStyleFullPageScrollerState
                         ScrollSuccess.FAILED_END_OF_LIST, 0);
                     _state = DragState.animatingToCancel;
                     //calling refresh callback
-                    widget.onRefresh();
+                    widget.onRefresh()?;
                   } else {
                     // if we are not on the first card and swiping back
                     // Animate to previous card
