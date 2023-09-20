@@ -12,7 +12,7 @@ export 'types.dart';
 ///
 /// Use [TikTokStyleFullPageScroller] as you would `ListView.Builder()`
 class TikTokStyleFullPageScroller extends StatefulWidget {
-  const TikTokStyleFullPageScroller({
+  TikTokStyleFullPageScroller({
     required this.contentSize,
     required this.builder,
     this.swipePositionThreshold = 0.20,
