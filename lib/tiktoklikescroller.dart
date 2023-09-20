@@ -19,7 +19,11 @@ class TikTokStyleFullPageScroller extends StatefulWidget {
     this.swipeVelocityThreshold = 1000,
     this.animationDuration = const Duration(milliseconds: 300),
     this.controller,
+    this.onRefresh,
   });
+
+  /// Callback to trigger the refreshIndicator.
+  final Future<void> Function()? onRefresh;
 
   /// The number of elements in the list,
   final int contentSize;
@@ -151,6 +155,8 @@ class _TikTokStyleFullPageScrollerState
                     _pendingEvent = ScrollEvent(ScrollDirection.BACKWARDS,
                         ScrollSuccess.FAILED_END_OF_LIST, 0);
                     _state = DragState.animatingToCancel;
+                    //calling refresh callback
+                    widget.onRefresh();
                   } else {
                     // if we are not on the first card and swiping back
                     // Animate to previous card
